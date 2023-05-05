@@ -1,5 +1,5 @@
 # DAT500_Group12
-In this project, we implement the following pipelines using Iowa Liquor Sale Dataset:
+In this project, we implemented the following pipelines using Iowa Liquor Sale Dataset:
 The pipeline reads unstructured data (e.g.: text in txt files), structures the data, processes the 
 dataset and store the results into a Spark Delta table. 
 When reruning the pipeline on another file, the pipeline shall update the existing Delta table. 
