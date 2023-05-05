@@ -18,4 +18,4 @@ Hadoop reads unstructured data from a text dataset
 We implemented the following Spark optimizations:
 1. Caching
 2. Repartitioning
-3. Using countDistinct() function
+3. Using countDistinct function
