@@ -1,4 +1,4 @@
-# Big Data Processing with Hadoop and Spark
+# Big Data Processing Using Hadoop and Spark
 In this project, we implemented the following pipelines using Iowa Liquor Sale Dataset:
 The pipeline reads unstructured data (e.g.: text in txt files), structures the data, processes the 
 dataset and store the results into a Spark Delta table. 
