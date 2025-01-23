@@ -1,28 +1,36 @@
-Iowa Liquor Sales Data Pipeline
+Data Pipeline and Overview
 
-Overview
+This project leverages Hadoop and Spark to process the Iowa Liquor Sales dataset. The pipeline handles unstructured data, transforms it into a structured format, and stores it in a Spark Delta Table while ensuring data consistency and eliminating duplicates.
 
-This project uses Hadoop and Spark to process the Iowa Liquor Sales dataset. It involves reading unstructured data, converting it to structured format, and storing it in a Spark Delta table without duplicates.
+Pipeline Steps
 
-Pipeline steps:
+1. Data Ingestion with Hadoop
 
-1. Hadoop: Reads and converts unstructured text data to structured CSV format, stored in HDFS.
+Task: Reads raw, unstructured text data.
+Output: Converts the data into a structured CSV format.
+Storage: Writes the structured data into the Hadoop Distributed File System (HDFS).
 
-2. Spark:
-   
-Defines and enforces data schema.
+2. Data Processing with Spark
 
-Transforms data types and enhances the dataset.
+Schema Definition:
+Defines and enforces a strict schema to ensure data consistency.
 
-Updates the Delta table ensuring no duplicates.
+Data Transformation:
+Converts data types for compatibility and analysis.
+Enhances the dataset by adding calculated fields or derived metrics (e.g., total sales, region-based aggregation).
 
-Optimizations:
+Delta Table Management:
+Writes the transformed data to a Spark Delta table.
+Implements MERGE logic to ensure no duplicate records are inserted.
 
-Caching: Improves processing speed.
+Optimizations Algorithms
 
-Repartitioning: Optimizes data distribution.
+1. Caching
+Purpose: Speeds up repeated transformations by temporarily storing intermediate results in memory.
 
-countDistinct: Ensures data uniqueness.
+2. Repartitioning
+Purpose: Balances data distribution across nodes for efficient processing.
+Method: Reorganizes data based on key fields like date, region, or store ID to optimize queries.
 
-
-
+2. Distinct Record Handling
+Approach: Uses countDistinct and deduplication logic to eliminate redundancy and maintain dataset integrity.
